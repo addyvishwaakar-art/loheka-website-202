@@ -3,31 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOHEKA - Agricultural Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jatan Enterprises - LOHEKA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #ff0000; /* Red background */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #f4f4f4;
+            transition: left 0.3s;
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .nav-menu li {
+            margin: 20px 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu a:hover {
+            color: #ff0000;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            min-height: 100vh;
+            background-image: url('path-to-your-logo.jpg'); /* Replace with your logo URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .main-content h2 {
+            color: #ff0000;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .main-content p {
+            color: #000;
+            font-size: 1.2rem;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Enquiry Form */
+        .enquiry-form {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .enquiry-form h3 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        .enquiry-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .enquiry-form input,
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .enquiry-form button {
+            background-color: #ff0000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .enquiry-form button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content h2 {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                width: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-   <header>
-    <img src="IMG_20250316_114733.jpg" alt="LOHEKA Logo" style="height: 50px;">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="blog.html">Blog</a>
-    </nav>
+    <header>
+        <h1>LOHEKA | Think Strong</h1>
     </header>
-    <section class="hero">
-        <h1>Welcome to LOHEKA</h1>
-        <p>Empowering Farmers with Quality Agricultural Solutions from Jehanabad, Bihar</p>
-        <a href="products.html" class="btn">Explore Our Products</a>
-    </section>
-    <section class="about">
-        <h2>About Us</h2>
-        <p>LOHEKA, based in Makhdumpur, Jehanabad, Bihar, is dedicated to revolutionizing farming with durable and innovative products like tractors, cultivators, tractor trolleys, water tanks, and cage wheels. Join us in building a stronger agricultural future.</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 LOHEKA by Jatan Enterprises. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
 
-</html>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#enquiry">Enquiry</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="main-content">
+        <h2>Welcome to LOHEKA</h2>
+        <p>Providing high-quality iron doors, windows, and agricultural equipment with trust and innovation.</p>
+    </section>
+
+    <section id="about" class="main-content">
+        <h2>About Us</h2>
+        <p>Jatan Enterprises की स्थापना वर्ष 1970 में स्व. Shri Ram Jatan Ji द्वारा की गई थी। उन्होंने अपने अनुभव और समर्पण से इस उद्यम की नींव रखी और iron-based products के निर्माण और आपूर्ति के क्षेत्र में एक सशक्त पहचान बनाई। उनके नेतृत्व में कंपनी ने स्थानीय स्तर से शुरू होकर धीरे-धीरे ग्राहकों के विश्वास और गुणवत्ता पर आधारित अपना विस्तार किया।</p>
+        <p>वर्ष 2019 में Shri Ram Jatan Ji के निधन के बाद, कंपनी की ज़िम्मेदारी उनके उत्तराधिकारी Mithlesh Ji ने संभाली। उन्होंने कंपनी को एक नए दृष्टिकोण और आधुनिक व्यावसायिक रणनीतियों के साथ आगे बढ़ाया। वर्तमान समय में, कंपनी की बागडोर Aditya Vishwaakar के हाथों में है, जो इसे नई ऊँचाइयों पर ले जाने के लिए प्रतिबद्ध हैं।</p>
+        <p>Jatan Enterprises के अंतर्गत, समय के साथ कई उप-ब्रांड भी विकसित हुए हैं। इनमें प्रमुख है LOHEKA, जिसकी शुरुआत Aditya Vishwaakar द्वारा की गई। LOHEKA का मुख्य उद्देश्य ग्राहकों को high-quality iron doors और windows उपलब्ध कराना है। इसके अतिरिक्त, LOHEKA FM के माध्यम से किसानों की आवश्यकताओं को ध्यान में रखते हुए tractor trolleys, cultivators और अन्य कृषि उपकरणों का निर्माण किया जाता है।</p>
+        <p>हमारा उद्देश्य है – गुणवत्ता, विश्वास और नवाचार के साथ ग्राहकों को श्रेष्ठ उत्पाद उपलब्ध कराना और अपने ब्रांड्स को राष्ट्रीय और वैश्विक स्तर पर स्थापित करना।</p>
+    </section>
+
+    <section id="products" class="main-content">
+        <h2>Our Products</h2>
+        <p>LOHEKA offers high-quality iron doors and windows. LOHEKA FM provides tractor trolleys, cultivators, and other agricultural equipment designed to meet the needs of farmers.</p>
+    </section>
+
+    <section id="contact" class="main-content">
+        <h2>Contact Us</h2>
+        <p>Phone: +91 93413 63103</p>
+        <p>Instagram: <a href="https://www.instagram.com/lohe_ka" target="_blank">@lohe_ka</a></p>
+    </section>
+
+    <section id="enquiry" class="enquiry-form">
+        <h3>Enquiry Form</h3>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+    </html>
