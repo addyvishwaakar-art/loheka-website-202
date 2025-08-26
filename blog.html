@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOHEKA - Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOHEKA</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="blog">
+        <h2>LOHEKA Blog</h2>
+        <div class="blog-form">
+            <h3>Write a New Blog Post</h3>
+            <form id="blogForm">
+                <input type="text" id="blogTitle" placeholder="Blog Title" required>
+                <textarea id="blogContent" placeholder="Write your blog post here..." required></textarea>
+                <button type="submit" class="btn">Publish Post</button>
+            </form>
+        </div>
+        <div id="blogPosts" class="blog-posts">
+            <!-- Blog posts will appear here -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 LOHEKA by Jatan Enterprises. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
