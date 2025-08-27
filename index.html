@@ -1,83 +1,243 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LOHEKA | Think Strong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <title>LOHEKA | Think Strong</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #B00001;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .logo span {
+      font-size: 14px;
+      display: block;
+      font-weight: normal;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffdede;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #B00001;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+    }
+    .mobile-menu a {
+      padding: 15px;
+      color: #fff;
+      text-decoration: none;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .mobile-menu a:hover {
+      background: #fff;
+      color: #B00001;
+    }/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+.home h2 {
+  font-size: 48px;
+  color: #B00001;
+  animation: fadeIn 3s ease-in-out infinite alternate;
+}
+@keyframes fadeIn {
+  from {opacity: 0.3; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1.05);}
+}
+.about, .products, .enquiry, .contact, .mission, .why, .testimonials, .journey {
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.8;
+}
+.products .item {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.products img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  background: #B00001;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+form button:hover {
+  background: #333;
+}
+footer {
+  background: #B00001;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+/* Responsive */
+@media(max-width:768px) {
+  nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <span class="logo-text animated-text">LOHEKA</span>
-      <span class="tagline">| Think Strong</span>
-    </div>
+    <div class="logo">LOHEKA <span>Think Strong</span></div>
     <nav>
-      <ul>
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#products" class="nav-link">Products</a></li>
-        <li><a href="#enquiry" class="nav-link">Enquiry</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#products">Products</a>
+      <a href="#mission">Mission</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#journey">Our Journey</a>
+      <a href="#enquiry">Enquiry</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </header>
-  <main>
-    <section id="home">
-      <h1 class="main-heading animated-text">Welcome to LOHEKA</h1>
-    </section>
-
-    <section id="about" style="display:none;">
-      <h2 class="section-heading">About Us</h2>
-      <p>Jatan Enterprises की स्थापना वर्ष 1970 में स्व. Shri Ram Jatan Ji द्वारा की गई थी। उन्होंने अपने अनुभव और समर्पण से इस उद्यम की नींव रखी और iron-based products के निर्माण और आपूर्ति के क्षेत्र में एक सशक्त पहचान बनाई। उनके नेतृत्व में कंपनी ने स्थानीय स्तर से शुरू होकर धीरे-धीरे ग्राहकों के विश्वास और गुणवत्ता पर आधारित अपना विस्तार किया।
-      <br>वर्ष 2019 में Shri Ram Jatan Ji के निधन के बाद, कंपनी की ज़िम्मेदारी उनके उत्तराधिकारी Mithlesh Ji ने संभाली। उन्होंने कंपनी को एक नए दृष्टिकोण और आधुनिक व्यावसायिक रणनीतियों के साथ आगे बढ़ाया। वर्तमान समय में, कंपनी की बागडोर Aditya Vishwaakar के हाथों में है, जो इसे नई ऊँचाइयों पर ले जाने के लिए प्रतिबद्ध हैं।
-      <br>Jatan Enterprises के अंतर्गत, समय के साथ कई उप-ब्रांड भी विकसित हुए हैं। इनमें प्रमुख है LOHEKA, जिसकी शुरुआत Aditya Vishwaakar द्वारा की गई। LOHEKA का मुख्य उद्देश्य ग्राहकों को high-quality iron doors और windows उपलब्ध कराना है। इसके अतिरिक्त, LOHEKA FM के माध्यम से किसानों की आवश्यकताओं को ध्यान में रखते हुए tractor trolleys, cultivators और अन्य कृषि उपकरणों का निर्माण किया जाता है।
-      <br>हमारा उद्देश्य है – गुणवत्ता, विश्वास और नवाचार के साथ ग्राहकों को श्रेष्ठ उत्पाद उपलब्ध कराना और अपने ब्रांड्स को राष्ट्रीय और वैश्विक स्तर पर स्थापित करना।
-      </p>
-    </section>
-
-    <section id="products" style="display:none;">
-      <h2 class="section-heading">Products</h2>
-      <ul class="products-list">
-        <li><b>Iron Doors & Windows:</b> LOHEKA ke specialty products jo durablility aur design dono mein best hain.</li>
-        <li><b>LOHEKA FM:</b> Farms ke liye - Tractor Trolley, Mini Thresher Machine, Cultivator, Cage Wheel, Water Tank, Hydra, Drill Machine aur anya upkaran.</li>
-        <li>Saare products high quality iron material mein banaye jate hain.</li>
-      </ul>
-      <div class="image-upload">
-        <p>Product images yahan add karein:</p>
-        <!-- Replace below with your product image links -->
-        <img src="product1.jpg" alt="Product 1" class="product-img">
-        <img src="product2.jpg" alt="Product 2" class="product-img">
-        <!-- Add more if needed -->
-      </div>
-    </section>
-
-    <section id="enquiry" style="display:none;">
-      <h2 class="section-heading">Product Enquiry</h2>
-      <form id="enquiryForm">
-        <input type="text" name="name" placeholder="Naam" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Contact Number" required>
-        <textarea name="message" placeholder="Apna inquiry likhein.." required></textarea>
-        <button type="submit" class="enquiry-btn">Send Inquiry</button>
-        <div id="enquiryMsg"></div>
-      </form>
-    </section>
-
-    <section id="contact" style="display:none;">
-      <h2 class="section-heading">Contact</h2>
-      <ul class="contact-info">
-        <li><b>Phone:</b> +91 93413 63103</li>
-        <li><b>Email:</b> info@loheka.co.in</li>
-        <li><b>Instagram:</b> @lohe_ka</li>
-        <li><b>Address:</b> Makhdumpur Navabganj Road, Jahanabad, Bihar-804422</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <span>© 2025 LOHEKA | Think Strong</span>
-  </footer>
-  <script src="script.js"></script>
-</body>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#products">Products</a>
+      <a href="#mission">Mission</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#journey">Our Journey</a>
+      <a href="#enquiry">Enquiry</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>  <section class="home" id="home">
+    <h2>Welcome to LOHEKA</h2>
+    <p>Building strength, trust, and quality since 1970.</p>
+  </section>  <section class="about" id="about">
+    <h2 style="color:#B00001">About Us</h2>
+    <p>Jatan Enterprises की स्थापना वर्ष 1970 में स्व. Shri Ram Jatan Ji द्वारा की गई थी। उन्होंने अपने अनुभव और समर्पण से इस उद्यम की नींव रखी और iron-based products के निर्माण और आपूर्ति के क्षेत्र में एक सशक्त पहचान बनाई।</p>
+    <p>वर्ष 2019 में Shri Ram Jatan Ji के निधन के बाद, कंपनी की ज़िम्मेदारी उनके उत्तराधिकारी Mithlesh Ji ने संभाली। वर्तमान समय में, कंपनी की बागडोर Aditya Vishwaakar के हाथों में है।</p>
+    <p>LOHEKA ब्रांड iron doors और windows का प्रतीक है, जबकि LOHEKA FM किसानों के लिए tractor trolleys, cultivators और अन्य उपकरण बनाता है।</p>
+  </section>  <section class="products" id="products">
+    <h2 style="color:#B00001">Our Products</h2>
+    <div class="item">
+      <h3>Iron Doors & Windows (LOHEKA)</h3>
+      <img src="your-image-link-here.jpg" alt="Iron Doors & Windows">
+      <p>उच्च गुणवत्ता वाले लोहे के दरवाजे और खिड़कियाँ, टिकाऊ और आकर्षक डिज़ाइन में।</p>
+    </div>
+    <div class="item">
+      <h3>Farm Equipment (LOHEKA FM)</h3>
+      <img src="your-image-link-here.jpg" alt="Farm Equipment">
+      <p>Tractor Trolleys, Mini Thresher Machine, Cultivator, Cage Wheel, Water Tank, Hydra Drill Machine आदि।</p>
+    </div>
+  </section>  <section class="mission" id="mission">
+    <h2 style="color:#B00001">Our Mission & Vision</h2>
+    <p>हमारा उद्देश्य है ग्राहकों को सर्वोत्तम गुणवत्ता प्रदान करना, किसानों की मदद करना और भारत में iron industry को एक नई पहचान दिलाना।</p>
+    <p>Vision: "To become a global leader in iron solutions with innovation and trust."</p>
+  </section>  <section class="why" id="why">
+    <h2 style="color:#B00001">Why Choose Us?</h2>
+    <ul style="list-style:none; padding:0;">
+      <li>✔ 50+ Years of Legacy</li>
+      <li>✔ Trusted by Thousands of Customers</li>
+      <li>✔ High-Quality & Durable Products</li>
+      <li>✔ Affordable Pricing</li>
+      <li>✔ Nationwide Supply Network</li>
+    </ul>
+  </section>  <section class="testimonials" id="testimonials">
+    <h2 style="color:#B00001">What Our Clients Say</h2>
+    <p>"LOHEKA ने हमारे घर को और मजबूत बनाया।" – Customer Review</p>
+    <p>"LOHEKA FM के agricultural tools ने खेती आसान कर दी।" – Farmer Review</p>
+  </section>  <section class="journey" id="journey">
+    <h2 style="color:#B00001">Our Journey</h2>
+    <p><strong>1970:</strong> Jatan Enterprises founded by Shri Ram Jatan Ji.</p>
+    <p><strong>1990s:</strong> Local supply network expanded across Bihar.</p>
+    <p><strong>2010:</strong> Introduction of agricultural equipment manufacturing.</p>
+    <p><strong>2019:</strong> Leadership passed to Mithlesh Ji and then to Aditya Vishwaakar.</p>
+    <p><strong>Today:</strong> LOHEKA & LOHEKA FM serve both homes and farms with trust and strength.</p>
+  </section>  <section class="enquiry" id="enquiry">
+    <h2 style="color:#B00001">Enquiry Form</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Your Phone" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </section>  <section class="contact" id="contact">
+    <h2 style="color:#B00001">Contact Us</h2>
+    <p><strong>Phone:</strong> +91 93413 63103</p>
+    <p><strong>Email:</strong> info@loheka.co.in</p>
+    <p><strong>Instagram:</strong> @lohe_ka</p>
+    <p><strong>Address:</strong> Makhdumpur Navabganj Road, Jehanabad, Bihar - 804422</p>
+  </section>  <footer>
+    <p>© 2025 LOHEKA | A brand of Jatan Enterprises. All rights reserved.</p>
+    <p>Strength, Trust, and Innovation for a Better Tomorrow.</p>
+  </footer>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script></body>
 </html>
-
