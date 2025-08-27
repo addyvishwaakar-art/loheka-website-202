@@ -1,145 +1,126 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: white; /* White background for body */
-    color: #333;
-    line-height: 1.6;
+  background: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
-
-/* Header Section */
 header {
-    background-color: red; /* Red header */
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background: #fff;
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-text {
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #B0001;
+  font-weight: bold;
+  margin-right: 8px;
+  animation: fadeUp 2s ease-in-out infinite alternate;
+}
+@keyframes fadeUp {
+  0%{opacity:0.7;transform:scale(1);}
+  100%{opacity:1;transform:scale(1.09);}
+}
+.tagline {
+  color: #B0001;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a.nav-link {
+  text-decoration: none;
+  color: #B0001;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+  position: relative;
+}
+nav a.nav-link.active,
+nav a.nav-link:hover {
+  color: #B0001;
+  border-bottom: 2px solid #B0001;
+}
+.main-heading {
+  margin: 50px auto 30px auto;
+  color: #B0001;
+  text-align: center;
+  font-size: 2.7rem;
+  animation: fadeUp 1.5s ease-in 0s 1;
 }
 
-.logo img {
-    height: 50px; /* Logo size, adjust as per your logo */
-    vertical-align: middle;
+.section-heading {
+  color: #B0001;
+  border-left: 5px solid #B0001;
+  padding-left: 12px;
+  font-size: 2rem;
+  margin-top: 40px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
+.products-list li, .contact-info li {
+  margin-bottom: 12px;
+  font-size: 1.18rem;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 16px;
-    transition: color 0.3s;
+.product-img {
+  width: 170px;
+  margin: 10px 14px 30px 0;
+  border: 2px solid #B0001;
+  box-shadow: 2px 2px 13px rgba(176,0,1,0.09);
+  border-radius: 7px;
 }
 
-nav a:hover {
-    color: #ffcccc; /* Light red on hover */
+.image-upload {
+  margin-top: 26px;
+  margin-bottom: 10px;
 }
 
-/* Hero Section (Home Page) */
-.hero {
-    background-color: #ffcccc; /* Light red background */
-    text-align: center;
-    padding: 60px 20px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+form#enquiryForm {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input, textarea {
+  border: 1.5px solid #B0001;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #fff;
+}
+button.enquiry-btn {
+  background: #B0001;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.hero h1 {
-    color: red;
-    font-size: 2.5em;
-    margin-bottom: 15px;
+#enquiryMsg {
+  margin-top: 8px;
+  color: #148300;
+  font-weight: 600;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.btn {
-    background-color: red;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #cc0000; /* Darker red on hover */
-}
-
-/* About Us Section (Home Page Preview) */
-.about-preview {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: white;
-}
-
-.about-preview h2 {
-    color: red;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about-preview p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto 20px;
-    color: #555;
-}
-
-.about-preview .btn {
-    margin-top: 10px;
-}
-
-/* Footer */
 footer {
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background: #fff;
+  color: #B0001;
+  text-align: center;
+  padding: 19px 0;
+  font-size: 1.1rem;
+  border-top: 1px solid #eee;
+  margin-top: 45px;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-} 
