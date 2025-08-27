@@ -1,17 +1,23 @@
-document.getElementById('blogForm')?.addEventListener('submit', function (e) {
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = ['home', 'about', 'products', 'enquiry', 'contact'];
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const title = document.getElementById('blogTitle').value;
-    const content = document.getElementById('blogContent').value;
-    const postsContainer = document.getElementById('blogPosts');
-
-    const post = document.createElement('div');
-    post.className = 'blog-post';
-    post.innerHTML = `
-        <h3>${title}</h3>
-        <p>${content}</p>
-        <small>Posted on ${new Date().toLocaleDateString()}</small>
-    `;
-
-    postsContainer.prepend(post);
-    document.getElementById('blogForm').reset();
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    sections.forEach(section => {
+      document.getElementById(section).style.display = "none";
+    });
+    document.getElementById(link.textContent.trim().toLowerCase().replace(/\s+/g, '')).style.display = "block";
+    if(link.textContent.trim().toLowerCase() === 'home'){
+      document.getElementById('home').style.display = "block";
+    }
+  });
 });
+
+// Enquiry Form
+document.getElementById('enquiryForm').onsubmit = function(e){
+  e.preventDefault();
+  document.getElementById('enquiryMsg').textContent = "धन्यवाद! आपकी inquiry भेज दी गई है।";
+  this.reset();
+};
