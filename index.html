@@ -1,249 +1,952 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOHEKA | Think Strong</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background: #B00001;
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .logo span {
-      font-size: 14px;
-      display: block;
-      font-weight: normal;
-    }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #ffdede;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-    }
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #B00001;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
-    }
-    .mobile-menu a {
-      padding: 15px;
-      color: #fff;
-      text-decoration: none;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-    .mobile-menu a:hover {
-      background: #fff;
-      color: #B00001;
-    }/* Sections */
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-.home h2 {
-  font-size: 48px;
-  color: #B00001;
-  animation: fadeIn 3s ease-in-out infinite alternate;
-}
-@keyframes fadeIn {
-  from {opacity: 0.3; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1.05);}
-}
-.about, .products, .enquiry, .contact, .mission, .why, .testimonials, .journey {
-  max-width: 1000px;
-  margin: auto;
-  line-height: 1.8;
-}
-.products .item {
-  margin: 20px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.products img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-form button {
-  background: #B00001;
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-form button:hover {
-  background: #333;
-}
-footer {
-  background: #B00001;
-  color: #fff;
-  text-align: center;
-  padding: 30px;
-  margin-top: 40px;
-}
-/* Responsive */
-@media(max-width:768px) {
-  nav {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOHEKA - Premium Doors, Windows & Agricultural Machinery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #B00001;
+            --secondary-white: #FFFFFF;
+            --dark-gray: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--secondary-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            margin-left: 10px;
+            color: var(--primary-red);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-red);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--secondary-white);
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--secondary-white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #990000;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--secondary-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .products-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-red);
+            color: var(--secondary-white);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(176, 0, 1, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary-red);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--secondary-white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            color: var(--secondary-white);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-red);
+            margin-top: 10px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--secondary-white);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background-color: var(--secondary-white);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-text, .about-image {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">LOHEKA <span>Think Strong</span></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#products">Products</a>
-      <a href="#mission">Mission</a>
-      <a href="#why">Why Choose Us</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#journey">Our Journey</a>
-      <a href="#enquiry">Enquiry</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#products">Products</a>
-      <a href="#mission">Mission</a>
-      <a href="#why">Why Choose Us</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#journey">Our Journey</a>
-      <a href="#enquiry">Enquiry</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </header>  <section class="home" id="home">
-    <h2>Welcome to LOHEKA</h2>
-    <p>Building strength, trust, and quality since 1970.</p>
-  </section>  <section class="about" id="about">
-    <h2 style="color:#B00001">About Us</h2>
-    <img width="200" height="275" src="ei_1742875831565-removebg-preview.png" alt="No Image Found">
-             <div class="name"> Lt. Ram Jatan Vishwaakar 
-    <p>Jatan Enterprises की स्थापना वर्ष 1970 में स्व. Shri Ram Jatan Ji द्वारा की गई थी। उन्होंने अपने अनुभव और समर्पण से इस उद्यम की नींव रखी और iron-based products के निर्माण और आपूर्ति के क्षेत्र में एक सशक्त पहचान बनाई।</p>
-    <p>वर्ष 2019 में Shri Ram Jatan Ji के निधन के बाद, कंपनी की ज़िम्मेदारी उनके उत्तराधिकारी Mithlesh Ji ने संभाली। वर्तमान समय में, कंपनी की बागडोर Aditya Vishwaakar के हाथों में है।</p>
-    <p>LOHEKA ब्रांड iron doors और windows का प्रतीक है, जबकि LOHEKA FM किसानों के लिए tractor trolleys, cultivators और अन्य उपकरण बनाता है।</p>
-  </section>  <section class="products" id="products">
-    <h2 style="color:#B00001">Our Products</h2>
-    <div class="item">
-      <h3>Iron Doors & Windows (LOHEKA)</h3>
-      <img src="IMG_20250321_115857.jpg" alt="Iron Doors & Windows">
-      <p>उच्च गुणवत्ता वाले लोहे के दरवाजे और खिड़कियाँ, टिकाऊ और आकर्षक डिज़ाइन में।</p>
-    </div>
-    <div class="item">
-      <h3>Farm Equipment (LOHEKA FM)</h3>
-      <img src="IMG_20250827_122008.png" alt="Farm Equipment">
-      <p>Tractor Trolleys, Mini Thresher Machine, Cultivator, Cage Wheel, Water Tank, Hydra Drill Machine आदि।</p>
-    </div>
-  </section>  <section class="mission" id="mission">
-    <h2 style="color:#B00001">Our Mission & Vision</h2>
-    <p>हमारा उद्देश्य है ग्राहकों को सर्वोत्तम गुणवत्ता प्रदान करना, किसानों की मदद करना और भारत में iron industry को एक नई पहचान दिलाना।</p>
-    <p>Vision: "To become a global leader in iron solutions with innovation and trust."</p>
-  </section>  <section class="why" id="why">
-    <h2 style="color:#B00001">Why Choose Us?</h2>
-    <ul style="list-style:none; padding:0;">
-      <li>✔ 50+ Years of Legacy</li>
-      <li>✔ Trusted by Thousands of Customers</li>
-      <li>✔ High-Quality & Durable Products</li>
-      <li>✔ Affordable Pricing</li>
-      <li>✔ Nationwide Supply Network</li>
-    </ul>
-  </section>  <section class="testimonials" id="testimonials">
-    <h2 style="color:#B00001">What Our Clients Say</h2>
-    <p>"LOHEKA ने हमारे घर को और मजबूत बनाया।" – Customer Review</p>
-    <p>"LOHEKA FM के agricultural tools ने खेती आसान कर दी।" – Farmer Review</p>
-  </section>  <section class="journey" id="journey">
-    <h2 style="color:#B00001">Our Journey</h2>
-    <p><strong>1970:</strong> Jatan Enterprises founded by Shri Ram Jatan Ji.</p>
-    <p><strong>1990s:</strong> Local supply network expanded across Bihar.</p>
-    <p><strong>2010:</strong> Introduction of agricultural equipment manufacturing.</p>
-    <p><strong>2019:</strong> Leadership passed to Mithlesh Ji and then to Aditya Vishwaakar.</p>
-    <p><strong>Today:</strong> LOHEKA & LOHEKA FM serve both homes and farms with trust and strength.</p>
-  </section>  <section class="enquiry" id="enquiry">
-    <h2 style="color:#B00001">Enquiry Form</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Your Phone" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Enquiry</button>
-    </form>
-  </section>  <section class="contact" id="contact">
-    <h2 style="color:#B00001">Contact Us</h2>
-    <p><strong>Phone:</strong> +91 93413 63103</p>
-    <p><strong>Email:</strong> info@loheka.co.in</p>
-    <p><strong>Instagram:</strong> @lohe_ka</p>
-    <p><strong>Address:</strong> Makhdumpur Navabganj Road, Jehanabad, Bihar - 804422</p>
-  </section>  <footer>
-    <p>© 2025 LOHEKA | A brand of Jatan Enterprises. All rights reserved.</p>
-    <p>Strength, Trust, and Innovation for a Better Tomorrow.</p>
-  </footer>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    }
-  </script></body>
-</html>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjEwIiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0IwMDAwMSI+TE9IRUtBPC90ZXh0Pjwvc3ZnPg==" alt="LOHEKA Logo">
+                <h1>LOHEKA</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Strength & Innovation Since 1970</h2>
+            <p>LOHEKA offers premium iron doors, windows, and agricultural machinery with over 50 years of trusted craftsmanship and modern innovation.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About LOHEKA</h2>
+                <p>50+ Years of Excellence in Iron & Steel</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>Jatan Enterprises, founded in 1970 by the visionary Late Shri Ram Jatan Vishwaakar, has been a cornerstone of trust, excellence, and innovation in the iron and steel industry for over five decades.</p>
+                    <p>After the passing of Late Shri Ram Jatan Vishwaakar in 2019, the business was carried forward by his son, Mr. Mithlesh Vishwaakar, who introduced modern manufacturing techniques and streamlined operations.</p>
+                    <p>Today, under the dynamic leadership of Aditya Vishwaakar, Jatan Enterprises continues to grow and innovate, operating through its flagship sub-brands LOHEKA and LOHEKA FM.</p>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="LOHEKA Factory">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Premium Products for Home and Farm</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Doors & Windows">
+                    </div>
+                    <div class="service-content">
+                        <h3>LOHEKA - Doors & Windows</h3>
+                        <p>Custom-designed doors & windows using steel and iron as per customer requirements. Strong, durable, and modern finishing for long-lasting protection.</p>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Agricultural Machinery">
+                    </div>
+                    <div class="service-content">
+                        <h3>LOHEKA FM - Farm Machinery</h3>
+                        <p>Agricultural machinery including tractor trolleys, cultivators, cage wheels, pole erection machines, water tanks, and mini paddy threshers.</p>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Custom Solutions">
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Solutions</h3>
+                        <p>We provide custom solutions tailored to your specific needs, whether for home security or agricultural productivity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Quality and Innovation in Every Product</p>
+            </div>
+            <div class="products-tabs">
+                <button class="tab-btn active" data-tab="doors-windows">Doors & Windows</button>
+                <button class="tab-btn" data-tab="farm-machinery">Farm Machinery</button>
+            </div>
+            <div class="tab-content active" id="doors-windows">
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Door">
+                        </div>
+                        <div class="product-info">
+                            <h3>Main Doors</h3>
+                            <p>Strong and elegant main doors with modern security features.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Windows">
+                        </div>
+                        <div class="product-info">
+                            <h3>Windows</h3>
+                            <p>Custom-designed windows with durable iron frames.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Security Doors">
+                        </div>
+                        <div class="product-info">
+                            <h3>Security Doors</h3>
+                            <p>Enhanced security doors for maximum protection.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Custom Designs">
+                        </div>
+                        <div class="product-info">
+                            <h3>Custom Designs</h3>
+                            <p>Custom-made designs as per customer requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="farm-machinery">
+                <div class="products-grid">
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tractor Trolley">
+                        </div>
+                        <div class="product-info">
+                            <h3>Tractor Trolley</h3>
+                            <p>Durable and efficient tractor trolleys for agricultural use.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1625546436313-981813ab2d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pole Erection Machine">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pole Erection Machine</h3>
+                            <p>Efficient machines for pole erection in agricultural fields.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1614294149710-32eec425a251?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Water Tank">
+                        </div>
+                        <div class="product-info">
+                            <h3>Water Tank</h3>
+                            <p>High-capacity water tanks for agricultural irrigation.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-on-scroll">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1625944521889-5a7fbd8a8653?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tractor Cultivator">
+                        </div>
+                        <div class="product-info">
+                            <h3>Tractor Cultivator</h3>
+                            <p>Efficient cultivators for modern farming needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Gallery</h2>
+                <p>Showcasing Our Quality Products</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1625546436313-981813ab2d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1614294149710-32eec425a251?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1625944521889-5a7fbd8a8653?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 7">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 8">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get In Touch For Business Inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Contact Details</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +91 93413 63103</p>
+                        <p><i class="fas fa-envelope"></i> info@loheka.co.in</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Makhdumpur, Jehanabad District, Bihar, India - 804422</p>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form animate-on-scroll">
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>LOHEKA</h4>
+                    <p>A Brand of Jatan Enterprises - Since 1970</p>
+                    <p>Strength, Trust, Innovation, and Royal Craftsmanship in the iron and steel industry.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Doors & Windows</a></li>
+                        <li><a href="#">Tractor Trolley</a></li>
+                        <li><a href="#">Pole Erection Machine</a></li>
+                        <li><a href="#">Water Tank</a></li>
+                        <li><a href="#">Tractor Cultivator</a></li>
+                        <li><a href="#">Other Farm Equipment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Makhdumpur, Jehanabad, Bihar</li>
+                        <li><i class="fas fa-phone"></i> +91 93413 63103</li>
+                        <li><i class="fas fa-envelope"></i> info@loheka.co.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LOHEKA (Jatan Enterprises). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Product Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
 
 
 
